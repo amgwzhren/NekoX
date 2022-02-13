@@ -20383,7 +20383,7 @@ public class TLRPC {
             bot_chat_history = (flags & 32768) != 0;
             bot_nochats = (flags & 65536) != 0;
             verified = (flags & 131072) != 0;
-            restricted = (flags & 262144) != 0;
+            restricted = false;
             min = (flags & 1048576) != 0;
             bot_inline_geo = (flags & 2097152) != 0;
             support = (flags & 8388608) != 0;
@@ -20518,7 +20518,7 @@ public class TLRPC {
             bot_chat_history = (flags & 32768) != 0;
             bot_nochats = (flags & 65536) != 0;
             verified = (flags & 131072) != 0;
-            restricted = (flags & 262144) != 0;
+            restricted = false;
             min = (flags & 1048576) != 0;
             bot_inline_geo = (flags & 2097152) != 0;
             support = (flags & 8388608) != 0;
@@ -20649,7 +20649,7 @@ public class TLRPC {
             bot_chat_history = (flags & 32768) != 0;
             bot_nochats = (flags & 65536) != 0;
             verified = (flags & 131072) != 0;
-            restricted = (flags & 262144) != 0;
+            restricted = false;
             min = (flags & 1048576) != 0;
             bot_inline_geo = (flags & 2097152) != 0;
             support = (flags & 8388608) != 0;
@@ -20965,7 +20965,7 @@ public class TLRPC {
             bot_chat_history = (flags & 32768) != 0;
             bot_nochats = (flags & 65536) != 0;
             verified = (flags & 131072) != 0;
-            restricted = (flags & 262144) != 0;
+            restricted = false;
             min = (flags & 1048576) != 0;
             bot_inline_geo = (flags & 2097152) != 0;
             id = stream.readInt32(exception);
@@ -38984,7 +38984,7 @@ public class TLRPC {
             deactivated = (flags & 32) != 0;
             call_active = (flags & 8388608) != 0;
             call_not_empty = (flags & 16777216) != 0;
-            noforwards = (flags & 33554432) != 0;
+            noforwards = false;
             id = stream.readInt64(exception);
             title = stream.readString(exception);
             photo = ChatPhoto.TLdeserialize(stream, stream.readInt32(exception), exception);
@@ -39182,7 +39182,7 @@ public class TLRPC {
             broadcast = (flags & 32) != 0;
             verified = (flags & 128) != 0;
             megagroup = (flags & 256) != 0;
-            restricted = (flags & 512) != 0;
+            restricted = false;
             signatures = (flags & 2048) != 0;
             id = stream.readInt32(exception);
             access_hash = stream.readInt64(exception);
@@ -39254,7 +39254,7 @@ public class TLRPC {
             broadcast = (flags & 32) != 0;
             verified = (flags & 128) != 0;
             megagroup = (flags & 256) != 0;
-            restricted = (flags & 512) != 0;
+            restricted = false;
             signatures = (flags & 2048) != 0;
             min = (flags & 4096) != 0;
             scam = (flags & 524288) != 0;
@@ -39265,7 +39265,7 @@ public class TLRPC {
             call_not_empty = (flags & 16777216) != 0;
             fake = (flags & 33554432) != 0;
             gigagroup = (flags & 67108864) != 0;
-            noforwards = (flags & 134217728) != 0;
+            noforwards = false;
             id = stream.readInt64(exception);
             if ((flags & 8192) != 0) {
                 access_hash = stream.readInt64(exception);
@@ -39404,7 +39404,7 @@ public class TLRPC {
             broadcast = (flags & 32) != 0;
             verified = (flags & 128) != 0;
             megagroup = (flags & 256) != 0;
-            restricted = (flags & 512) != 0;
+            restricted = false;
             signatures = (flags & 2048) != 0;
             min = (flags & 4096) != 0;
             id = stream.readInt32(exception);
@@ -39536,7 +39536,7 @@ public class TLRPC {
             broadcast = (flags & 32) != 0;
             verified = (flags & 128) != 0;
             megagroup = (flags & 256) != 0;
-            restricted = (flags & 512) != 0;
+            restricted = false;
             signatures = (flags & 2048) != 0;
             min = (flags & 4096) != 0;
             scam = (flags & 524288) != 0;
@@ -39653,7 +39653,7 @@ public class TLRPC {
             broadcast = (flags & 32) != 0;
             verified = (flags & 128) != 0;
             megagroup = (flags & 256) != 0;
-            restricted = (flags & 512) != 0;
+            restricted = false;
             signatures = (flags & 2048) != 0;
             min = (flags & 4096) != 0;
             scam = (flags & 524288) != 0;
@@ -39768,7 +39768,7 @@ public class TLRPC {
             broadcast = (flags & 32) != 0;
             verified = (flags & 128) != 0;
             megagroup = (flags & 256) != 0;
-            restricted = (flags & 512) != 0;
+            restricted = false;
             signatures = (flags & 2048) != 0;
             min = (flags & 4096) != 0;
             id = stream.readInt32(exception);
@@ -39845,7 +39845,7 @@ public class TLRPC {
             broadcast = (flags & 32) != 0;
             verified = (flags & 128) != 0;
             megagroup = (flags & 256) != 0;
-            restricted = (flags & 512) != 0;
+            restricted = false;
             signatures = (flags & 2048) != 0;
             min = (flags & 4096) != 0;
             id = stream.readInt32(exception);
@@ -39917,7 +39917,7 @@ public class TLRPC {
             broadcast = (flags & 32) != 0;
             verified = (flags & 128) != 0;
             megagroup = (flags & 256) != 0;
-            restricted = (flags & 512) != 0;
+            restricted = false;
             signatures = (flags & 2048) != 0;
             min = (flags & 4096) != 0;
             id = stream.readInt32(exception);
@@ -55185,9 +55185,9 @@ public class TLRPC {
             post = (flags & 16384) != 0;
             from_scheduled = (flags & 262144) != 0;
             legacy = (flags & 524288) != 0;
-            edit_hide = (flags & 2097152) != 0;
+            edit_hide = false;
             pinned = (flags & 16777216) != 0;
-            noforwards = (flags & 67108864) != 0;
+            noforwards = false;
             id = stream.readInt32(exception);
             if ((flags & 256) != 0) {
                 from_id = Peer.TLdeserialize(stream, stream.readInt32(exception), exception);
@@ -55368,9 +55368,9 @@ public class TLRPC {
             post = (flags & 16384) != 0;
             from_scheduled = (flags & 262144) != 0;
             legacy = (flags & 524288) != 0;
-            edit_hide = (flags & 2097152) != 0;
+            edit_hide = false;
             pinned = (flags & 16777216) != 0;
-            noforwards = (flags & 67108864) != 0;
+            noforwards = false;
             id = stream.readInt32(exception);
             if ((flags & 256) != 0) {
                 from_id = Peer.TLdeserialize(stream, stream.readInt32(exception), exception);
@@ -55545,7 +55545,7 @@ public class TLRPC {
             post = (flags & 16384) != 0;
             from_scheduled = (flags & 262144) != 0;
             legacy = (flags & 524288) != 0;
-            edit_hide = (flags & 2097152) != 0;
+            edit_hide = false;
             pinned = (flags & 16777216) != 0;
             id = stream.readInt32(exception);
             if ((flags & 256) != 0) {
@@ -55720,7 +55720,7 @@ public class TLRPC {
             post = (flags & 16384) != 0;
             from_scheduled = (flags & 262144) != 0;
             legacy = (flags & 524288) != 0;
-            edit_hide = (flags & 2097152) != 0;
+            edit_hide = false;
             pinned = (flags & 16777216) != 0;
             id = stream.readInt32(exception);
             if ((flags & 256) != 0) {
@@ -55889,7 +55889,7 @@ public class TLRPC {
             post = (flags & 16384) != 0;
             from_scheduled = (flags & 262144) != 0;
             legacy = (flags & 524288) != 0;
-            edit_hide = (flags & 2097152) != 0;
+            edit_hide = false;
             id = stream.readInt32(exception);
             if ((flags & 256) != 0) {
                 from_id = new TLRPC.TL_peerUser();
@@ -56052,7 +56052,7 @@ public class TLRPC {
             post = (flags & 16384) != 0;
             from_scheduled = (flags & 262144) != 0;
             legacy = (flags & 524288) != 0;
-            edit_hide = (flags & 2097152) != 0;
+            edit_hide = false;
             id = stream.readInt32(exception);
             if ((flags & 256) != 0) {
                 from_id = new TLRPC.TL_peerUser();
@@ -56209,7 +56209,7 @@ public class TLRPC {
             post = (flags & 16384) != 0;
             from_scheduled = (flags & 262144) != 0;
             legacy = (flags & 524288) != 0;
-            edit_hide = (flags & 2097152) != 0;
+            edit_hide = false;
             id = stream.readInt32(exception);
             if ((flags & 256) != 0) {
                 from_id = new TLRPC.TL_peerUser();
@@ -56372,7 +56372,7 @@ public class TLRPC {
             post = (flags & 16384) != 0;
             from_scheduled = (flags & 262144) != 0;
             legacy = (flags & 524288) != 0;
-            edit_hide = (flags & 2097152) != 0;
+            edit_hide = false;
             id = stream.readInt32(exception);
             if ((flags & 256) != 0) {
                 from_id = new TLRPC.TL_peerUser();
