@@ -8212,14 +8212,13 @@ public class MessagesController extends BaseController implements NotificationCe
                 AndroidUtilities.runOnUIThread(() -> checkChatInviter(chat.id, true));
             }
 
-            // TLRPC.Message lastMessageFinal = lastMessage;
+            TLRPC.Message lastMessageFinal = lastMessage;
             AndroidUtilities.runOnUIThread(() -> {
-//                if (lastMessageFinal != null) {
-//                    dialogsLoadedTillDate = Math.min(dialogsLoadedTillDate, lastMessageFinal.date);
-//                } else {
-//                    dialogsLoadedTillDate = Integer.MIN_VALUE;
-//                }
-                dialogsLoadedTillDate = Integer.MIN_VALUE;
+                if (lastMessageFinal != null) {
+                    dialogsLoadedTillDate = Math.min(dialogsLoadedTillDate, lastMessageFinal.date);
+                } else {
+                    dialogsLoadedTillDate = Integer.MIN_VALUE;
+                }
                 if (loadType != DIALOGS_LOAD_TYPE_CACHE) {
                     applyDialogsNotificationsSettings(dialogsRes.dialogs);
                     getMediaDataController().loadDraftsIfNeed();
