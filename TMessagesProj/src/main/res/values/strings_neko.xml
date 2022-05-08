@@ -146,4 +146,5 @@
     <string name="ChatBlurAlphaValue">Chat Blur Alpha</string>
     <string name="EditUndo">Undo</string>
     <string name="EditRedo">Redo</string>
+    <string name="customTitle">Custom Title</string>
 </resources>

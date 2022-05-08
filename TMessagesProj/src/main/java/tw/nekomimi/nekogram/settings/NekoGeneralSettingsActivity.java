@@ -98,6 +98,7 @@ public class NekoGeneralSettingsActivity extends BaseFragment {
     private final AbstractConfigCell autoUpdateSubInfoRow = cellGroup.appendCell(new ConfigCellTextCheck(NekoConfig.autoUpdateSubInfo));
     private final AbstractConfigCell useSystemDNSRow = cellGroup.appendCell(new ConfigCellTextCheck(NekoConfig.useSystemDNS));
     private final AbstractConfigCell customDoHRow = cellGroup.appendCell(new ConfigCellTextInput(null, NekoConfig.customDoH, "https://1.0.0.1/dns-query", null));
+    private final AbstractConfigCell customTitleRow = cellGroup.appendCell(new ConfigCellTextInput(null, NekoConfig.customTitle, "PagerGram", null));
     private final AbstractConfigCell customPublicProxyIPRow = cellGroup.appendCell(new ConfigCellTextDetail(NekoConfig.customPublicProxyIP, (view, position) -> {
         customDialog_BottomInputString(position, NekoConfig.customPublicProxyIP, LocaleController.getString("customPublicProxyIPNotice"), "IP");
     }, LocaleController.getString("UsernameEmpty", R.string.UsernameEmpty)));
