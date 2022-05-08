@@ -46,6 +46,7 @@ import java.io.File;
 import java.lang.reflect.Method;
 import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.concurrent.CountDownLatch;
 
 import tw.nekomimi.nekogram.ExternalGcm;
 import tw.nekomimi.nekogram.NekoXConfig;
@@ -62,6 +63,7 @@ public class ApplicationLoader extends Application {
 
     public static volatile NetworkInfo currentNetworkInfo;
     public static volatile Handler applicationHandler;
+    public static final CountDownLatch countDownLatch = new CountDownLatch(1);
 
     private static ConnectivityManager connectivityManager;
     private static volatile boolean applicationInited = false;
@@ -388,6 +390,7 @@ public class ApplicationLoader extends Application {
         org.osmdroid.config.Configuration.getInstance().setOsmdroidBasePath(new File(ApplicationLoader.applicationContext.getCacheDir(), "osmdroid"));
 
         startPushService();
+        countDownLatch.countDown();
 
     }
 
