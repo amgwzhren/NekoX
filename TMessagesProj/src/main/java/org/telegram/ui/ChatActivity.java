@@ -26493,7 +26493,6 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                 if (photoWidth > 512 || photoHeight > 512) {
                                     openPhotoViewerForMessage(cell, message);
                                 }
-                                return;
                             }
                             StickersAlert alert = new StickersAlert(getParentActivity(), ChatActivity.this, message.getInputStickerSet(), null, bottomOverlayChat.getVisibility() != View.VISIBLE && (currentChat == null || ChatObject.canSendStickers(currentChat)) ? chatActivityEnterView : null, themeDelegate);
                             alert.setCalcMandatoryInsets(isKeyboardVisible());
